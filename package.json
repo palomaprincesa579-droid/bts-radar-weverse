@@ -1,0 +1,9 @@
+{
+  "name": "bts-radar-weverse",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Monitor automático dos Notices oficiais do BTS no Weverse",
+  "dependencies": {
+    "playwright": "^1.58.0"
+  }
+}
