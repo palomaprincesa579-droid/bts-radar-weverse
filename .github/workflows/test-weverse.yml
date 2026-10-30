@@ -1,0 +1,27 @@
+name: Teste Weverse
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testar-weverse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Baixar arquivos do repositório
+        uses: actions/checkout@v6
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Instalar Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Abrir Weverse e procurar Notices
+        run: node monitor.js
